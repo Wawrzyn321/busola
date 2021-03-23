@@ -38,7 +38,7 @@ describe('CreateWorkloadForm helpers', () => {
       },
     };
 
-    const formatted = formatService(deployment, 'test-id');
+    const formatted = formatService(deployment);
 
     expect(formatted).toMatchSnapshot();
   });

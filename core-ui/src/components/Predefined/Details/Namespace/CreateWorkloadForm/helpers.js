@@ -34,7 +34,7 @@ export function formatDeployment(deployment) {
   return runtimeDeployment;
 }
 
-export function formatService(deployment, deploymentUID) {
+export function formatService(deployment) {
   const service = {
     apiVersion: 'v1',
     kind: 'Service',

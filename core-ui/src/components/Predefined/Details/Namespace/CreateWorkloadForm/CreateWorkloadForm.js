@@ -37,13 +37,11 @@ export default function CreateWorkloadForm({
       onError('Cannot create deployment', e.message);
       return;
     }
-    const createdResourceUID = createdResource?.metadata?.uid;
-
     try {
       if (deployment.createService && createdResourceUID) {
         await postRequest(
           `/api/v1/namespaces/${namespaceId}/services`,
-          formatService(deployment, createdResourceUID),
+          formatService(deployment),
         );
       }
       onCompleted(deployment.name, 'Deployment created');
